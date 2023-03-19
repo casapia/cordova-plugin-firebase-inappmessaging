@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-firebase-inappmessaging",
-  "version": "7.0.2",
+  "version": "7.0.2-NTL1",
   "description": "Cordova plugin for Firebase In-App Messaging",
   "types": "./types/index.d.ts",
   "cordova": {
@@ -38,7 +38,7 @@
     "postdocs": "perl -i -0pe 's/(<!-- TypedocGenerated -->).*/$1\n\n/gms' README.md && cat ./docs/README.md >> README.md"
   },
   "devDependencies": {
-    "typedoc": "^0.23.9",
-    "typedoc-plugin-markdown": "^3.13.4"
+    "typedoc": "^0.23.24",
+    "typedoc-plugin-markdown": "^3.14.0"
   }
 }

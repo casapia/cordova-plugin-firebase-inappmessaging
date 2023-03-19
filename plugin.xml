@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="cordova-plugin-firebase-inappmessaging"
-      version="7.0.2">
+      version="7.0.2-NTL1">
 
     <name>cordova-plugin-firebase-inappmessaging</name>
     <description>Cordova plugin for Firebase In-App Messaging</description>
@@ -11,9 +11,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-inappmessaging/issues</issue>
 
     <engines>
-        <engine name="cordova" version=">=10.0.0"/>
+        <engine name="cordova" version=">=11.0.0"/>
         <engine name="cordova-android" version=">=11.0.0"/>
-        <engine name="cordova-ios" version=">=6.0.0"/>
+        <engine name="cordova-ios" version=">=6.2.0"/>
     </engines>
 
     <js-module src="www/FirebaseInappMessaging.js" name="FirebaseInappMessaging">
@@ -21,11 +21,13 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <dependency id="cordova-plugin-firebase-analytics" version="^7.0.0"/>
-
     <preference name="AUTOMATIC_DATA_COLLECTION_ENABLED" default="true" />
 
+    <dependency id="cordova-outsystems-firebase-core"
+        url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1" />
+
     <platform name="ios">
-        <preference name="IOS_FIREBASE_POD_VERSION" default="9.3.0" />
+        <preference name="IOS_FIREBASE_POD_VERSION" default="10.6.0" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
@@ -56,7 +58,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="30.3.1" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="31.2.3" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
@@ -65,6 +67,15 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             </feature>
         </config-file>
 
+        <config-file target="config.xml" parent="/*">
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.13" />
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+        
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="firebase_inapp_messaging_auto_data_collection_enabled" android:value="$AUTOMATIC_DATA_COLLECTION_ENABLED" />
         </config-file>
