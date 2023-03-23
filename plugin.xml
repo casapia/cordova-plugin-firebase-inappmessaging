@@ -16,8 +16,6 @@
         <engine name="cordova-ios" version=">=6.2.0" />
     </engines>
 
-    <preference name="IOS_BUILD_DEVELOPMENT_TEAM" default="" />
-
     <js-module src="www/FirebaseInappMessaging.js" name="FirebaseInappMessaging">
         <merges target="cordova.plugins.firebase.inappmessaging" />
     </js-module>
