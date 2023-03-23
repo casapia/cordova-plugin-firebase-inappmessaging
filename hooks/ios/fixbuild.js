@@ -16,10 +16,10 @@ module.exports = (context) => {
     const configXML = path.join(projectRoot, 'config.xml');
     const configParser = new ConfigParser(configXML);
 
-    const targetBuildDevelopmentTeam = configParser.getPlatformPreference("IOS_BUILD_DEVELOPMENT_TEAM", "ios");
-    if (!targetBuildDevelopmentTeam || targetBuildDevelopmentTeam.length === 0) {
-        return;
-    }
+    const targetBuildDevelopmentTeam = configParser.getGlobalPreference("IOS_BUILD_DEVELOPMENT_TEAM");
+    // if (!targetBuildDevelopmentTeam || targetBuildDevelopmentTeam.length === 0) {
+    //     return;
+    // }
 
     let podfileContent = fs.readFileSync(podfilePath, "utf-8");
     if (podfileContent.indexOf("post_install") == -1) {
