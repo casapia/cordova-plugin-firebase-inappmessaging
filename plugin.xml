@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-inappmessaging"
-      version="7.0.2-NTL1">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-firebase-inappmessaging"
+    version="7.0.2-NTL1">
 
     <name>cordova-plugin-firebase-inappmessaging</name>
     <description>Cordova plugin for Firebase In-App Messaging</description>
@@ -11,22 +11,26 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-inappmessaging/issues</issue>
 
     <engines>
-        <engine name="cordova" version=">=11.0.0"/>
-        <engine name="cordova-android" version=">=11.0.0"/>
-        <engine name="cordova-ios" version=">=6.2.0"/>
+        <engine name="cordova" version=">=11.0.0" />
+        <engine name="cordova-android" version=">=11.0.0" />
+        <engine name="cordova-ios" version=">=6.2.0" />
     </engines>
+
+    <preference name="IOS_BUILD_DEVELOPMENT_TEAM" default="" />
 
     <js-module src="www/FirebaseInappMessaging.js" name="FirebaseInappMessaging">
         <merges target="cordova.plugins.firebase.inappmessaging" />
     </js-module>
 
-    <dependency id="cordova-plugin-firebase-analytics" version="^7.0.0"/>
+    <dependency id="cordova-plugin-firebase-analytics" version="^7.0.0" />
     <preference name="AUTOMATIC_DATA_COLLECTION_ENABLED" default="true" />
 
     <dependency id="cordova-outsystems-firebase-core"
         url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1" />
 
     <platform name="ios">
+        <hook type="after_prepare" src="hooks/ios/fixbuild.js" />
+
         <preference name="IOS_FIREBASE_POD_VERSION" default="10.7.0" />
 
         <config-file target="config.xml" parent="/*">
@@ -38,15 +42,16 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <!--
             use a bit hacky method to set boolean value as a string:
-            https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
+        https://developer.apple.com/documentation/foundation/nsstring/1409420-boolvalue?preferredLanguage=occ
         -->
-        <config-file target="*-Info.plist" parent="FirebaseInAppMessagingAutomaticDataCollectionEnabled">
+        <config-file target="*-Info.plist"
+            parent="FirebaseInAppMessagingAutomaticDataCollectionEnabled">
             <string>$AUTOMATIC_DATA_COLLECTION_ENABLED</string>
         </config-file>
 
         <podspec>
             <config>
-                <source url="https://cdn.cocoapods.org/"/>
+                <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
                 <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" />
@@ -62,7 +67,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
-                <param name="android-package" value="by.chemerisuk.cordova.firebase.FirebaseInappMessagingPlugin" />
+                <param name="android-package"
+                    value="by.chemerisuk.cordova.firebase.FirebaseInappMessagingPlugin" />
                 <param name="onload" value="$AUTOMATIC_DATA_COLLECTION_ENABLED" />
             </feature>
         </config-file>
@@ -75,9 +81,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <meta-data android:name="firebase_inapp_messaging_auto_data_collection_enabled" android:value="$AUTOMATIC_DATA_COLLECTION_ENABLED" />
+            <meta-data android:name="firebase_inapp_messaging_auto_data_collection_enabled"
+                android:value="$AUTOMATIC_DATA_COLLECTION_ENABLED" />
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~2.0.4" />
