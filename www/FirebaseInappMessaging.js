@@ -31,3 +31,17 @@ function(messagesSupressed) {
         exec(resolve, reject, PLUGIN_NAME, "setMessagesSuppressed", [messagesSupressed]);
     });
 };
+
+exports.getInstallationId =
+/**
+ * Get Installation ID.
+ * @returns {Promise<void>} Callback when operation is completed
+ *
+ * @example
+ * cordova.plugins.firebase.inappmessaging.getInstallationId();
+ */
+function() {
+    return new Promise(function(resolve, reject) {
+        exec(resolve, reject, PLUGIN_NAME, "getInstallationId", []);
+    });
+};

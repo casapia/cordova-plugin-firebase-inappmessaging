@@ -16,3 +16,14 @@ export function setAutomaticDataCollectionEnabled(collectionEnabled: boolean): P
  * cordova.plugins.firebase.inappmessaging.setMessagesSuppressed(true);
  */
 export function setMessagesSuppressed(messagesSupressed: boolean): Promise<void>;
+
+/**
+ *
+ * Returns the installation ID
+ * @returns {Promise<string>} installation ID
+ *
+ * @example
+ * cordova.plugins.firebase.inappmessaging.getInstallationId().then(function(value) {
+ * });
+ */
+export function getInstallationId(): Promise<string>;
