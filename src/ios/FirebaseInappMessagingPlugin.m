@@ -1,8 +1,17 @@
 #import "FirebaseInappMessagingPlugin.h"
 @import Firebase;
+@import FirebaseCore;
 @import FirebaseInAppMessaging;
 
 @implementation FirebaseInappMessagingPlugin
+
+- (void)pluginInitialize {
+    NSLog(@"Starting Firebase In-AppMessaging plugin");
+
+    if(![FIRApp defaultApp]) {
+        [FIRApp configure];
+    }
+}
 
 - (void)setAutomaticDataCollectionEnabled:(CDVInvokedUrlCommand *)command {
     bool collectionEnabled = [[command.arguments objectAtIndex:0] boolValue];
