@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-xmlns:android="http://schemas.android.com/apk/res/android"
-           id="cordova-plugin-firebase-inappmessaging"
-      version="8.0.0">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-firebase-inappmessaging"
+    version="8.0.0">
 
     <name>cordova-plugin-firebase-inappmessaging</name>
     <description>Cordova plugin for Firebase In-App Messaging</description>
@@ -56,7 +56,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
-        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="32.7.1" />
+        <preference name="ANDROID_FIREBASE_BOM_VERSION" default="32.8.0" />
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
@@ -69,6 +69,12 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <meta-data android:name="firebase_inapp_messaging_auto_data_collection_enabled"
                 android:value="true" />
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <preference name="AndroidXEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+            <preference name="GradlePluginGoogleServicesVersion" value="4.3.15" />
         </config-file>
 
         <dependency id="cordova-support-android-plugin" version="~2.0.4" />
