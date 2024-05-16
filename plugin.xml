@@ -46,7 +46,8 @@
 
         <podspec>
             <config>
-                <source url="https://cdn.cocoapods.org/" />
+                <!-- <source url="https://cdn.cocoapods.org/" /> -->
+                <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods use-frameworks="true">
                 <pod name="FirebaseInAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" />
