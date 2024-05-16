@@ -44,10 +44,10 @@
 
         <podspec>
             <config>
-                <source url="https://github.com/firebase/firebase-ios-sdk.git" />
+                <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" />
+                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="CocoaPods-10.24.0" />
             </pods>
         </podspec>
 
