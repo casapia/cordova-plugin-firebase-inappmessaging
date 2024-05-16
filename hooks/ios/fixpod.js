@@ -19,8 +19,8 @@ module.exports = (context) => {
   //       `pod install --repo-update
   // ` + podfileContent;
   //     fs.writeFileSync(podfilePath, podfileContent, "utf-8");
-  console.log("Running pod install --repo-update --verbose");
-  return execa("pod", ["install", "--repo-update --verbose"], {
+  console.log("Running pod install --repo-update");
+  return execa("pod", ["install", "--repo-update"], {
     cwd: platformPath,
   });
   //   }
