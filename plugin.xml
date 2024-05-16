@@ -24,8 +24,6 @@
         url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1" />
 
     <platform name="ios">
-        <hook type="before_plugin_install" src="hooks/ios/podupdate.sh" />
-
         <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0-beta" />
 
         <config-file target="config.xml" parent="/*">
