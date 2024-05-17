@@ -15,7 +15,13 @@ module.exports = (context) => {
 
   let podfileContent = fs.readFileSync(podfilePath, "utf-8");
   console.log("Podfile content: ", podfileContent);
-  fs.writeFileSync(podfilePath, "", "utf-8");
+  try {
+    fs.unlinkSync(podfilePath);
+    console.log("Podfile.lock deleted successfully");
+  } catch (err) {
+    console.error(`Failed to delete Podfile.lock: ${err.message}`);
+    return;
+  }
   return execa("pod", ["install", "--repo-update"], {
     cwd: platformPath,
   });
