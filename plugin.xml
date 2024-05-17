@@ -47,13 +47,12 @@
         <podspec>
             <config>
                 <source url="https://cdn.cocoapods.org/" />
-                <!-- <source url="https://github.com/CocoaPods/Specs.git"/> -->
             </config>
             <pods use-frameworks="true">
                 <!-- <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" /> -->
-                <pod name="nanopb" spec="2.30909.1" />
-                <pod name="Firebase/Core" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" />
-                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" />
+                <!-- <pod name="nanopb" spec="2.30909.1" /> -->
+                <!-- <pod name="Firebase/Core" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" /> -->
+                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="$IOS_FIREBASE_POD_VERSION" />
             </pods>
         </podspec>
 
