@@ -52,7 +52,7 @@
                 <!-- <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" /> -->
                 <!-- <pod name="nanopb" spec="2.30909.1" /> -->
                 <!-- <pod name="Firebase/Core" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" /> -->
-                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0-beta" />
+                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" />
             </pods>
         </podspec>
 
