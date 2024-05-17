@@ -26,7 +26,7 @@
     <platform name="ios">
         <hook type="before_plugin_install" src="hooks/ios/fixpod.js" />
 
-        <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0-beta" />
+        <!-- <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0-beta" /> -->
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
@@ -52,7 +52,7 @@
                 <!-- <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" /> -->
                 <!-- <pod name="nanopb" spec="2.30909.1" /> -->
                 <!-- <pod name="Firebase/Core" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" /> -->
-                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="$IOS_FIREBASE_POD_VERSION" />
+                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0-beta" />
             </pods>
         </podspec>
 
