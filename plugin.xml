@@ -1,7 +1,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-firebase-inappmessaging"
-    version="8.0.2">
+    version="8.0.0">
 
     <name>cordova-plugin-firebase-inappmessaging</name>
     <description>Cordova plugin for Firebase In-App Messaging</description>
@@ -24,9 +24,7 @@
         url="https://github.com/OutSystems/cordova-outsystems-firebase-core.git#1.0.1" />
 
     <platform name="ios">
-        <hook type="before_plugin_install" src="hooks/ios/fixpod.js" />
-
-        <!-- <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0-beta" /> -->
+        <preference name="IOS_FIREBASE_POD_VERSION" default="10.17.0" />
 
         <config-file target="config.xml" parent="/*">
             <feature name="FirebaseInappMessaging">
@@ -49,10 +47,7 @@
                 <source url="https://cdn.cocoapods.org/" />
             </config>
             <pods use-frameworks="true">
-                <!-- <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" /> -->
-                <!-- <pod name="nanopb" spec="2.30909.1" /> -->
-                <!-- <pod name="Firebase/Core" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" /> -->
-                <pod name="Firebase/InAppMessaging" git="https://github.com/firebase/firebase-ios-sdk.git" tag="10.17.0" />
+                <pod name="Firebase/InAppMessaging" spec="$IOS_FIREBASE_POD_VERSION" />
             </pods>
         </podspec>
 
